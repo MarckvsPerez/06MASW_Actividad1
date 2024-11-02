@@ -1,14 +1,19 @@
 package com.example.jetpackapp.ui.screens
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.jetpackapp.viewmodel.WelcomeViewModel
+import com.example.jetpackapp.R
 import com.example.jetpackapp.ui.theme.GrayBackground
 import com.example.jetpackapp.ui.theme.OrangeAccent
 import com.example.jetpackapp.ui.theme.Purple
@@ -45,9 +50,18 @@ fun WelcomeScreen(
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .fillMaxSize()
+                    .background(Color.White)
                     .padding(innerPadding)
                     .padding(16.dp)
             ) {
+                Image(
+                    painter = painterResource(id = R.drawable.logo),
+                    contentDescription = "Logo de la aplicación",
+                    modifier = Modifier
+                        .size(200.dp)
+                        .padding(bottom = 16.dp)
+                )
+
                 Text(
                     text = welcomeMessage,
                     style = MaterialTheme.typography.headlineMedium,

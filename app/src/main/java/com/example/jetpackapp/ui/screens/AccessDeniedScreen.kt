@@ -7,13 +7,30 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.jetpackapp.ui.theme.GrayBackground
+import com.example.jetpackapp.ui.theme.OrangeAccent
+import com.example.jetpackapp.ui.theme.Purple
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AccessDeniedScreen(navController: NavController) {
     Scaffold(
+        modifier = Modifier
+            .fillMaxSize(),
         topBar = {
-            TopAppBar(title = { Text("Access Denied") })
+            TopAppBar(
+                title = {
+                    Text(
+                        "Acceso Denegado",
+                        style = MaterialTheme.typography.titleLarge,
+                        color = MaterialTheme.colorScheme.onPrimary
+                    )
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = OrangeAccent,
+                    titleContentColor = GrayBackground
+                )
+            )
         },
         content = { innerPadding ->
             Column(
@@ -24,13 +41,22 @@ fun AccessDeniedScreen(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                Text(text = "Access Denied: Unauthorized User")
+                Text(
+                    text = "Acceso denegado: Usuario no autorizado",
+                    style = MaterialTheme.typography.headlineMedium,
+                    color = Purple
+                )
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Botón para regresar a la pantalla de bienvenida
-                Button(onClick = { navController.popBackStack() }) {
-                    Text("Back to Welcome Screen")
+                Button(
+                    onClick = { navController.popBackStack() },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = OrangeAccent,
+                        contentColor = MaterialTheme.colorScheme.onSecondary
+                    )
+                ) {
+                    Text("Volver a la pantalla de bienvenida", style = MaterialTheme.typography.bodyLarge)
                 }
             }
         }

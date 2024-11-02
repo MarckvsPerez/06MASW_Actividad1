@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Jetpack App</string>
+    <string name="detail_screen_title">Pantalla de Detalles</string>
+    <string name="greeting_text">Hola, %1$s!</string>
+    <string name="back_button_text">Regresar</string>
+    <string name="add_detail_placeholder">Añadir detalle</string>
+    <string name="submit_button">Enviar</string>
 </resources>

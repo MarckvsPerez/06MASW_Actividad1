@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.jetpackapp.ui.screens.AccessDeniedScreen
 import com.example.jetpackapp.ui.screens.DetailScreen
 import com.example.jetpackapp.ui.screens.WelcomeScreen
 import com.example.jetpackapp.ui.theme.JetpackAppTheme
@@ -30,9 +31,14 @@ fun AppNavigation() {
 
     NavHost(navController = navController, startDestination = "welcome") {
         composable("welcome") {
-            WelcomeScreen(onNavigateToDetail = { userName ->
-                navController.navigate("detail/$userName")
-            })
+            WelcomeScreen(
+                onNavigateToDetail = { userName ->
+                    navController.navigate("detail/$userName")
+                },
+                onAccessDenied = {
+                    navController.navigate("accessDenied")
+                }
+            )
         }
         composable(
             route = "detail/{userName}",
@@ -40,6 +46,9 @@ fun AppNavigation() {
         ) { backStackEntry ->
             val userName = backStackEntry.arguments?.getString("userName") ?: ""
             DetailScreen(navController = navController, userName = userName)
+        }
+        composable("accessDenied") {
+            AccessDeniedScreen(navController = navController)
         }
     }
 }

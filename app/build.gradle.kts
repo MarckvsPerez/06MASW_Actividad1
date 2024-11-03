@@ -71,7 +71,10 @@ dependencies {
     // Coroutines para operaciones asíncronas con Room
     implementation ("androidx.room:room-ktx:2.5.0")
 
+    testImplementation("org.mockito:mockito-core:4.0.0")
     testImplementation(libs.junit)
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+    testImplementation("androidx.arch.core:core-testing:2.1.0")
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

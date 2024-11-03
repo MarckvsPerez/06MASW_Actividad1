@@ -52,7 +52,6 @@ fun WelcomeScreen(
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color.White)
                     .padding(innerPadding)
                     .padding(16.dp)
             ) {

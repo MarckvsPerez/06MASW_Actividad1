@@ -35,7 +35,7 @@ fun WelcomeScreen(
                     Text(
                         "Welcome Screen",
                         style = MaterialTheme.typography.titleLarge,
-                        color = MaterialTheme.colorScheme.onPrimary
+                        color = Color.White
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -50,7 +50,6 @@ fun WelcomeScreen(
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color.White)
                     .padding(innerPadding)
                     .padding(16.dp)
             ) {

@@ -27,10 +27,8 @@ fun WelcomeScreen(
 ) {
     val welcomeMessage by viewModel.welcomeMessage.observeAsState("")
     var textState by remember { mutableStateOf("") }
-<<<<<<< HEAD
     var emailState by remember { mutableStateOf("") }
-=======
->>>>>>> 24456589e915db97c1b9e2a8aca60deb332ec98f
+
 
     Scaffold(
         topBar = {
@@ -85,7 +83,6 @@ fun WelcomeScreen(
                     )
                 )
 
-<<<<<<< HEAD
                 OutlinedTextField(
                     value = emailState,
                     onValueChange = { emailState = it },
@@ -97,19 +94,11 @@ fun WelcomeScreen(
                     )
                 )
 
-                Spacer(modifier = Modifier.height(16.dp))
-
                 Button(
 
                     onClick = {
                         if (textState in listOf("Actividad1") && emailState == "ejemplo@gmail.com") {
-=======
-                Spacer(modifier = Modifier.height(16.dp))
 
-                Button(
-                    onClick = {
-                        if (textState in listOf("Marc", "Amanda", "Mario")) {
->>>>>>> 24456589e915db97c1b9e2a8aca60deb332ec98f
                             viewModel.updateWelcomeMessage("Bienvenido, $textState")
                             onNavigateToDetail(textState)
                         } else {
@@ -120,7 +109,6 @@ fun WelcomeScreen(
                         containerColor = OrangeAccent,
                         contentColor = MaterialTheme.colorScheme.onSecondary
                     )
-<<<<<<< HEAD
 
                 )
                 {
@@ -133,11 +121,6 @@ fun WelcomeScreen(
                         style = MaterialTheme.typography.bodySmall
                     )
                 }
-=======
-                ) {
-                    Text("Continuar", style = MaterialTheme.typography.bodyLarge)
-                }
->>>>>>> 24456589e915db97c1b9e2a8aca60deb332ec98f
             }
         }
     )

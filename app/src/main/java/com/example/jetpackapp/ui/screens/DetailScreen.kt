@@ -156,8 +156,9 @@ fun DetailScreen(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     items(detailsList) { (detail, time) ->
+                        // Mostrar tanto el detalle como la hora
                         Text(
-                            text = detail,
+                            text = "$detail - ${String.format("%02d:%02d", time.hour, time.minute)}", // Formato "HH:mm"
                             style = MaterialTheme.typography.bodyLarge,
                             modifier = Modifier
                                 .fillMaxWidth()

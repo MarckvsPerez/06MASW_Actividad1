@@ -154,7 +154,7 @@ fun DetailScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Título de la lista de lugares
+                // Título de la lista de lugares !!!!
                 Text(
                     text = "Lista de lugares",
                     style = MaterialTheme.typography.titleMedium,
